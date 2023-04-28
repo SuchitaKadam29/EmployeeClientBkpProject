@@ -1,0 +1,25 @@
+package com.hdfc.capstone.serviceImpl;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.hdfc.capstone.entity.Employee;
+
+
+@SpringBootTest
+class EmployeeServiceImplTest {
+
+	@Autowired
+	EmployeeServiceImpl employeeSeriveImpl;
+
+	@Test
+	void testGetEmployeeById() throws Exception {   
+		Employee employee = employeeSeriveImpl.getEmployeeById(1);
+		assertNotNull(employee);
+		assertEquals(1, employee.getEmployeeId());
+	}
+}
